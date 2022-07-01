@@ -84,7 +84,7 @@ pub fn generate_single_vanilla_proof(
 ) -> Result<VanillaProofBytes> {
     ensure!(!challenges.is_empty(), "no challenges supplied");
 
-    with_shape!(
+    bh_rust_storage::with_shape!( //BUHUANG modify by nemo
         u64::from(registered_post_proof_type.sector_size()),
         generate_single_vanilla_proof_inner,
         registered_post_proof_type,
@@ -194,7 +194,7 @@ pub fn generate_winning_post(
         "invalid post type provided"
     );
 
-    with_shape!(
+    bh_rust_storage::with_shape!( //BUHUANG modify by nemo
         u64::from(registered_post_proof_type_v1.sector_size()),
         generate_winning_post_inner,
         registered_post_proof_type_v1,
@@ -374,7 +374,7 @@ pub fn generate_window_post(
         "invalid post type provided"
     );
 
-    with_shape!(
+    bh_rust_storage::with_shape!( //BUHUANG modify by nemo
         u64::from(registered_post_proof_type_v1.sector_size()),
         generate_window_post_inner,
         registered_post_proof_type_v1,
